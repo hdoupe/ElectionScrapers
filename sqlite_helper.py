@@ -9,12 +9,12 @@ class Sqlite_Helper(object):
 	
 	def create(self,header):
 		self.connection = sdb.connect(self.sqlite_path)
-		self.cursor = connection.cursor()
+		self.cursor = self.connection.cursor()
 		
-		cursor.execute("CREATE TABLE {tn} ({hd})".\
+		self.cursor.execute("CREATE TABLE {tn} ({hd})".\
 			format(tn = self.table_name,hd = header))
 		
-		connection.commit()
+		self.connection.commit()
 
 	def insert_rows(self,length,rows):
 
