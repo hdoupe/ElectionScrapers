@@ -52,20 +52,6 @@ def getContests(category = "https://www.predictit.org/Browse/Group/54"):
 		print div
 
 """
-	Supposed 
-"""
-# def run():
-# 	categories = getCategories()
-# 	
-# 	for category in categories:
-# 		contests = getContests(category)
-# 		for contest in contests:
-#			scrapeContest(contest)
-# 
-# 	return someData
-
-
-"""
 	Returns dictionary with keys: contest, question, buy, sell (buy and sell are dicts
 	with keys yes no
 """
