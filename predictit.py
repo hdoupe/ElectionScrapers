@@ -56,9 +56,6 @@ def getContests(category = "https://www.predictit.org/Browse/Group/54"):
 	for div in marketList.find_all('div'):
 		print div
 
-"""
-	Supposed 
-"""
 # def run():
 # 	categories = getCategories()
 # 	
