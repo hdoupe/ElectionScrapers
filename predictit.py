@@ -102,11 +102,7 @@ def scrapeContest(url = SCURL):
 					data[key] = u'0'
 			
 			results.append(data)
-# 	try:
-# 		br.service.process.send_signal(signal.SIGTERM)
-# 		br.quit()
-# 	except:
-# 		pass
+
 	del soup,td
 
 	return results
