@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from sqlite_helper import Sqlite_Helper
 import time,re,sched,datetime,argparse
-br = webdriver.PhantomJS(service_log_path="/Users/HANK/Documents/election/election_data/ghostdriver.log")
+br = webdriver.PhantomJS()
 
-pathToTable = "/Users/HANK/Documents/election/election_data/2016_election/prediction_markets.sqlite"
+pathToTable = "path/to/2016_election/prediction_markets.sqlite"
 
 earlyStates = ["https://www.predictit.org/Market/1675/Who-will-win-the-2016-Nevada-Republican-caucuses","https://www.predictit.org/Market/1882/Who-will-place-2nd-in-the-2016-Nevada-Republican-caucuses","https://www.predictit.org/Market/1674/Who-will-win-the-2016-South-Carolina-Democratic-primary"]
 
@@ -31,7 +31,7 @@ SCURL = "https://www.predictit.org/Market/1673/Who-will-win-the-2016-South-Carol
 """
 def getCategories():
 	url = "https://www.predictit.org/Home/browseonlycategories?categoryid=6"
-	br = webdriver.PhantomJS(service_log_path="/Users/HANK/Documents/election/election_data/ghostdriver.log")
+	br = webdriver.PhantomJS()
 	soup = BeautifulSoup(getSource(url,br), "html.parser")
 	div = soup.find('div', {'class':'overflow'})
 	base = "https://www.predictit.org/"
@@ -47,7 +47,7 @@ def getCategories():
 	'id':marketList or 'class':row but it's not showing up
 """
 def getContests(category = "https://www.predictit.org/Browse/Group/54"):
-	br = webdriver.PhantomJS(service_log_path="/Users/HANK/Documents/election/election_data/ghostdriver.log")
+	br = webdriver.PhantomJS()
 	soup = BeautifulSoup(getSource(category,br),"html.parser")
 	marketList = soup.find('div',{'id','marketList'})
 	print marketList
