@@ -125,7 +125,7 @@ def go():
 	DATE = SH.cursor.fetchall()[0][0]
 	print DATE
 	keys = ['CONTEST','QUESTION','BUY_YES', 'BUY_NO', 'SELL_YES','SELL_NO']
-	for link in earlyStates+national+superTuesday:
+	for link in national+superTuesday:
 		try:
 			results = scrapeContest(link)
 			rows = []
