@@ -2,9 +2,7 @@ import json,requests
 from datetime import datetime
 from sqlite_helper import Sqlite_Helper
 import time,re,sched,datetime,argparse,json,requests
-from selenium import webdriver
-from bs4 import BeautifulSoup
-br = webdriver.PhantomJS()
+
 
 pathToTable = "prediction_markets.sqlite"
 
