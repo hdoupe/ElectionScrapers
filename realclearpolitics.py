@@ -80,72 +80,29 @@ def gen_election_scrape():
 		ps = poll_scraper(year)
 		ps.scrape(path,url)
 
-# 	year = 2004
-# 	url = "http://www.realclearpolitics.com/epolls/2004/president/us/general_election_bush_vs_kerry-939.html"
-# 	run(year,url)
-# 	
-# 	year = 2008
-# 	url = "http://www.realclearpolitics.com/epolls/2008/president/us/general_election_mccain_vs_obama-225.html"
-# 	run(year,url)
-# 	
-# 	year = 2012
-# 	url = "http://www.realclearpolitics.com/epolls/2012/president/us/general_election_romney_vs_obama-1171.html"
-# 	run(year,url)
-# 	
-# 	year = 2016
-# 	gop_url = "http://www.realclearpolitics.com/epolls/2016/president/nh/new_hampshire_republican_presidential_primary-3350.html"
-# 	dem_url = "http://www.realclearpolitics.com/epolls/2016/president/nh/new_hampshire_democratic_presidential_primary-3351.html"
-# 	run(year,gop_url)
-# 	run(year,dem_url)
+	year = 2004
+	url = "http://www.realclearpolitics.com/epolls/2004/president/us/general_election_bush_vs_kerry-939.html"
+	run(year,url)
+	
+	year = 2008
+	url = "http://www.realclearpolitics.com/epolls/2008/president/us/general_election_mccain_vs_obama-225.html"
+	run(year,url)
+	
+	year = 2012
+	url = "http://www.realclearpolitics.com/epolls/2012/president/us/general_election_romney_vs_obama-1171.html"
+	run(year,url)
+	
+	year = 2016
+	gop_url = "http://www.realclearpolitics.com/epolls/2016/president/nh/new_hampshire_republican_presidential_primary-3350.html"
+	dem_url = "http://www.realclearpolitics.com/epolls/2016/president/nh/new_hampshire_democratic_presidential_primary-3351.html"
+	run(year,gop_url)
+	run(year,dem_url)
 	
 	year = 2016
 	gop_url = "http://www.realclearpolitics.com/epolls/2016/president/sc/south_carolina_republican_presidential_primary-4151.html"
 	dem_url = "http://www.realclearpolitics.com/epolls/2016/president/nv/nevada_democratic_presidential_caucus-5337.html"
 	run(year,gop_url,state = 'gop_SC')
 	run(year,dem_url,state = 'dem_NV')
-
-def polls_by_state():
-	
-	def run(get_states, year, url, race_type):
-		print year
-		dir = "election_data/{year}_election"
-		base_out = 'state_poll_presidential_general_election_{year}.txt'
-		path = os.path.join(dir.format(year = str(year)),base_out.format(year = str(year)))
-		ps = poll_scraper(year)
-		ps.get_polls_by_state(get_states, url, race_type)
-		del ps
-	
-# 	files
-# def get_links(path):
-# 	links = open(path).read()
-# 	return links.replace('\r','\n').split('\n')
-# 	
-# def file_run():
-# 	years = {2012:["president","senate"],2014: ["governor","senate"]}
-# 	presidential
-# 	
-# 	# path to links
-# 	base_dir = 	"election_data/{year}_election/{type}_poll_links_by_state.txt"
-# 	# where we will send results
-# 	path_out = 	"election_data/{year}_election/{state}_{type}_election_{year}.txt"
-# 	
-# # 	cycle through files, scrape all links
-# 	for year in years:
-# 		types = years[year]
-# 		for type in types:
-# 			links = open(base_dir.format(year = str(year), type = type)).read()
-# 			links = links.replace('\r','\n').split('\n')
-# 			if not ("http" == links[0][0:5]):
-# # 				some links are missing the first half
-# 				for link in links:
-# 					os.path.join("http://www.realclearpolitics.com/",link)
-# 			
-# 			for link in links
-# 					path = path_out.format(year = str(year), state = link[-2], type = type)
-# 					ps = poll_scraper(url,year)
-# 					ps.scrape(path,url)
-# 		
-# 	files = get_links(path
 
 if __name__ == '__main__':
 	gen_election_scrape()
