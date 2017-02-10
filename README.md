@@ -1,6 +1,6 @@
 realclearpolitics.py scrapes polling data from their formatted tables.
 
-predictit.py scrapes data from predictit.org and formats it into a sqlite table.  The default setting is to run once an hour, but this can be changed using the flag --interval or -i followed by the desired waiting time in seconds.
+predictit.py calls the predictit api and formats the results into a sqlite table.  The default setting is to run once an hour, but this can be changed using the flag --interval or -i followed by the desired waiting time in seconds.
 
 Depends on BeautifulSoup, Selenium, PhantomJS, and sqlite_helper.py
 
